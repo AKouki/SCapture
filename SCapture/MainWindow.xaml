@@ -1,0 +1,67 @@
+﻿<Window x:Class="SCapture.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SCapture"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="True"
+        Style="{DynamicResource DefaultWindowStyle}"
+        Title="Screen Capturer" Height="90" Width="364">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Windows.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            CaptionHeight="30"
+            CornerRadius="0"
+            GlassFrameThickness="0"/>
+    </WindowChrome.WindowChrome>
+
+    <Grid Background="{StaticResource BackgroundVeryLightBrush}">
+
+        <!-- Main action buttons -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+
+            <local:ImageButton
+                x:Name="CaptureRegionButton"
+                Click="CaptureRegionButton_Click"
+                Source="/Images/region.png" 
+                Content="Region" 
+                Style="{StaticResource ActionButton}" />
+
+            <local:ImageButton 
+                x:Name="CaptureWindowButton"
+                Click="CaptureWindowButton_Click"
+                Source="/Images/window.png" 
+                Content="Window" 
+                Style="{StaticResource ActionButton}" />
+
+            <local:ImageButton 
+                x:Name="CaptureFullScreenButton"
+                Click="CaptureFullScreenButton_Click"
+                Source="/Images/desktop.png" 
+                Content="Full Screen" 
+                Style="{StaticResource ActionButton}" />
+
+            <local:ImageButton
+                x:Name="OptionsButton"
+                Click="OptionsButton_Click"
+                Source="/Images/settings.png" 
+                Content="Options"
+                Width="90"
+                Style="{StaticResource ActionButton}" />
+
+        </StackPanel>
+
+    </Grid>
+</Window>

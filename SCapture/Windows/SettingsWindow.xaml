@@ -1,0 +1,27 @@
+﻿<Window x:Class="SCapture.Windows.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:settings="clr-namespace:SCapture.Properties"
+        mc:Ignorable="d"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        Title="Options" Height="300" Width="350">
+
+    <Grid>
+        <GroupBox Header="Application" HorizontalAlignment="Left" Height="135" Margin="7,10" VerticalAlignment="Top" Width="320">
+            <Grid>
+                <CheckBox IsChecked="{Binding Path=(settings:Settings.Default).AlwaysCopyToClipboard, Mode=TwoWay}" x:Name="AlwaysCopyCheckBox" Content="Always copy to Clipboard" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <CheckBox IsChecked="{Binding Path=(settings:Settings.Default).AlwaysOpenToEditor, Mode=TwoWay}" x:Name="AlwaysOpenEditorCheckBox" Content="Always open Editor before Save" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top"/>
+                <Label Content="File Format" HorizontalAlignment="Left" Margin="7,55,0,0" VerticalAlignment="Top"/>
+                <ComboBox SelectedIndex="{Binding Path=(settings:Settings.Default).SaveFileFormat, Mode=TwoWay}" x:Name="FileFormatComboBox" HorizontalAlignment="Left" Margin="90,58,0,0" VerticalAlignment="Top" Width="120">
+                    <ComboBoxItem Content="BMP"/>
+                    <ComboBoxItem Content="JPG"/>
+                    <ComboBoxItem Content="PNG"/>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

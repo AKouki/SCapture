@@ -1,0 +1,31 @@
+﻿<Window x:Class="SCapture.Windows.RegionCaptureWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SCapture.Windows"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Background="{x:Null}"
+        Title="Region Capture" Height="300" Width="300">
+
+    <Grid x:Name="Grid1" 
+          Background="Black" 
+          Opacity=".4" 
+          MouseLeftButtonDown="Grid1_MouseLeftButtonDown"
+          MouseLeftButtonUp="Grid1_MouseLeftButtonUp"
+          MouseMove="Grid1_MouseMove">
+        <Canvas x:Name="Canvas1" Opacity=".5" >
+            <Rectangle x:Name="Rect" 
+                       Stroke="Black" 
+                       StrokeDashArray="4 4" 
+                       SnapsToDevicePixels="True" 
+                       StrokeThickness="2" 
+                       Fill="White"/>
+        </Canvas>
+    </Grid>
+
+</Window>
